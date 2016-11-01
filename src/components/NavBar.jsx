@@ -16,6 +16,7 @@ module.exports = React.createClass({
     },
     render: function() {
         return (
+            /* jshint ignore:start */
             <div className="navbar navbar-default">
                 <div className="navbar-header" onClick={this.menuClicked}>
                     <div className="navbar-toggle">
@@ -55,6 +56,7 @@ module.exports = React.createClass({
                     </ul>
                 </div>
             </div>
+            /* jshint ignore:end */
         );
     }
 });

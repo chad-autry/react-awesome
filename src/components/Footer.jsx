@@ -3,6 +3,7 @@ var React = require('react');
 module.exports = React.createClass({
     render: function() {
         return (
+            /* jshint ignore:start */
             <footer className="footer">
             <div className="footer-inner">
                 <p>
@@ -10,6 +11,7 @@ module.exports = React.createClass({
                 </p>
             </div>
             </footer>
+            /* jshint ignore:end */
         );
     }
-})
+});

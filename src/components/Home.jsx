@@ -3,6 +3,7 @@ var React = require('react');
 module.exports = React.createClass({
     render: function() {
         return (
+            /* jshint ignore:start */
             <div>
                 <div className="jumbotron">
                   <h1 className="text-center">Notice</h1>
@@ -74,6 +75,7 @@ module.exports = React.createClass({
                   </div>
                 </div>
             </div>
+            /* jshint ignore:end */
         );
     }
-})
+});

@@ -8,11 +8,13 @@ module.exports = React.createClass({
 
     render: function() {
         return (
+            /* jshint ignore:start */
             <div className="container-fluid">
                 <NavBar/>
                 <Home/>
                 <Footer/>
             </div>
+            /* jshint ignore:end */
         );
     }
 });

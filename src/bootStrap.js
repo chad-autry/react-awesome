@@ -15,7 +15,9 @@ var appRootComponent;
     document.addEventListener('DOMContentLoaded', function() {
         
         ReactDOM.render(
+            /* jshint ignore:start */
             <AppRoot/>, document.getElementById('app')
+            /* jshint ignore:end */
         );
 
     });

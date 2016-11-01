@@ -4,7 +4,7 @@
   "description": "react boilerplate",
   "scripts": {
     "build": "mkdirp ./target/webapp && npm run less && npm run copy:HTML && npm run copy:jquery&& browserify ./src/bootStrap.js --debug -o ./target/webapp/bundle.js",
-    "jshint": "jshint ./src",
+    "jshint": "jshint ./src/* --extract=auto --extra-ext=jsx",
     "clean": "rimraf ./target",
     "copy:HTML": "copyfiles -f ./src/index.html ./target/webapp",
     "copy:jquery": "copyfiles -f ./node_modules/jquery/dist/jquery.min.js ./target/webapp",
