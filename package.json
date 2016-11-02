@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "description": "react boilerplate",
   "scripts": {
-    "build": "mkdirp ./target/webapp && npm run less && npm run copy:HTML && npm run copy:jquery&& browserify ./src/bootStrap.js --debug -o ./target/webapp/bundle.js",
+    "build": "mkdirp ./target/webapp && npm run less && npm run copy:HTML && npm run copy:jquery&& webpack --config ./webpack-prod.config.js",
     "jshint": "jshint ./src/* --extract=auto --extra-ext=jsx",
     "clean": "rimraf ./target",
     "copy:HTML": "copyfiles -f ./src/index.html ./target/webapp",
@@ -28,6 +28,10 @@
     "reactify": "^1.1.1"
   },
   "devDependencies": {
+    "babel-core": "^6.18.2",
+    "babel-loader": "^6.2.7",
+    "babel-preset-es2016": "^6.16.0",
+    "babel-preset-react": "^6.16.0",
     "browserify": "git+https://git@github.com/chad-autry/node-browserify",
     "browserify-shim": "^3.8.12",
     "copyfiles": "^0.2.1",
@@ -38,7 +42,8 @@
     "mkdirp": "^0.5.1",
     "react": "^15.0.1",
     "react-dom": "^15.0.1",
-    "rimraf": "^2.4.4"
+    "rimraf": "^2.4.4",
+    "webpack": "^1.13.3"
   },
   "jshintConfig": {
     "node": "true",
