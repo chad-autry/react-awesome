@@ -27,10 +27,10 @@ module.exports = React.createClass({
                       </p>
                     </div>
                     <div className="col-sm-12 col-md-6 col-lg-4">
-                      <h4><i className="fa fa-magic"></i> browserify</h4>
+                      <h4><i className="fa fa-suitcase"></i> Webpack</h4>
                       <p>
-                        Brings node packages to the browser. Magic!&nbsp;
-                        <a href="http://browserify.org/">
+                        A module bundler for all our source files.&nbsp;
+                        <a href="https://webpack.github.io/docs/">
                           More &raquo;
                         </a>
                       </p>

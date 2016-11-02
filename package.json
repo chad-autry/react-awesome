@@ -21,19 +21,14 @@
     "url": "http://chad-autry.github.io/"
   },
   "dependencies": {
-    "bootstrap": "^3.3.6",
-    "cartesian-hexagonal": "0.0.3",
-    "golden-layout": "^1.5.1",
-    "hex-grid-map-3d": "^0.33.0",
-    "reactify": "^1.1.1"
+    "bootstrap": "^3.3.6"
   },
   "devDependencies": {
+    "babel-cli": "^6.18.0",
     "babel-core": "^6.18.2",
     "babel-loader": "^6.2.7",
-    "babel-preset-es2016": "^6.16.0",
+    "babel-preset-latest": "^6.16.0",
     "babel-preset-react": "^6.16.0",
-    "browserify": "git+https://git@github.com/chad-autry/node-browserify",
-    "browserify-shim": "^3.8.12",
     "copyfiles": "^0.2.1",
     "jquery": "^2.2.3",
     "jshint": "^2.9.1-rc1",
@@ -51,15 +46,5 @@
       "document"
     ],
     "esversion": 6
-  },
-  "browserify": {
-    "transform": [
-      [
-        "reactify",
-        {
-          "es6": true
-        }
-      ]
-    ]
   }
 }
