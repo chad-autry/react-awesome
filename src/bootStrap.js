@@ -4,6 +4,7 @@
 var AppRoot = require('./components/AppRoot.jsx');
 var Home = require('./components/Home.jsx');
 var IndexRedirect = require('react-router').IndexRedirect;
+var Login = require('./components/Login.jsx');
 var React = require('react');
 var ReactDOM = require('react-dom');
 var Redirect = require('react-router').Redirect;
@@ -31,6 +32,7 @@ var appRootComponent;
                 <Route path="/" component={AppRoot}>
                     <IndexRedirect to="/home" />
                     <Route path="/home" component={Home}/>
+                    <Route path="/login" component={Login}/>
                     <Redirect from="*" to="/home"/>
                 </Route>
             </Router>, document.getElementById('app')
