@@ -1,7 +1,7 @@
 var Footer = require('./Footer.jsx');
 var NavBar = require('./NavBar.jsx');
-var Home = require('./Home.jsx');
 var React = require('react');
+
 
 module.exports = React.createClass({
     
@@ -11,7 +11,7 @@ module.exports = React.createClass({
             /* jshint ignore:start */
             <div className="container-fluid">
                 <NavBar/>
-                <Home/>
+                {this.props.children}
                 <Footer/>
             </div>
             /* jshint ignore:end */

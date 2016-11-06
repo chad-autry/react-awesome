@@ -1,4 +1,5 @@
 var React = require('react');
+var NavItem = require('./NavItem.jsx');
 
 /**
  * Create a React component for the NavBar
@@ -31,11 +32,9 @@ module.exports = React.createClass({
                     Due to hdpi devices, we're collapsible on both on both xs and sm screens */ }
                 <div className={this.state.menuCollapsed ? 'navbar-collapse hidden-xs hidden-sm' : 'navbar-collapse'}>
                     <ul className="nav navbar-nav">
-                        <li className="active"> {/*Hard Code Activity for now until introducing route state*/}
-                            <a>
-                                <i className="fa fa-home"></i> Home
-                            </a>
-                        </li>
+                            <NavItem to="/home" activeClassName="active">
+                                 <i className="fa fa-home"></i> Home
+                            </NavItem>
                         <li>
                             <a href="https://github.com/chad-autry/react-bp">
                                 <i className="fa fa-github-alt"></i> Github
