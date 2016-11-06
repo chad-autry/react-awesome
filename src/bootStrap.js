@@ -5,6 +5,7 @@ var AppRoot = require('./components/AppRoot.jsx');
 var Home = require('./components/Home.jsx');
 var React = require('react');
 var ReactDOM = require('react-dom');
+var Redirect = require('react-router').Redirect;
 var Router = require('react-router').Router;
 var Route = require('react-router').Route;
 var browserHistory = require('react-router').browserHistory;
@@ -23,7 +24,7 @@ var appRootComponent;
             <Router history={browserHistory}>
                 <Route path="/" component={AppRoot}>
                     <Route path="/home" component={Home}/>
-                    <Route path="*" component={Home}/>
+                    <Redirect from="*" to="/home"/>
                 </Route>
             </Router>, document.getElementById('app')
             /* jshint ignore:end */
