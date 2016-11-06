@@ -3,13 +3,14 @@
 
 var AppRoot = require('./components/AppRoot.jsx');
 var Home = require('./components/Home.jsx');
+var IndexRedirect = require('react-router').IndexRedirect;
 var React = require('react');
 var ReactDOM = require('react-dom');
 var Redirect = require('react-router').Redirect;
 var Router = require('react-router').Router;
 var Route = require('react-router').Route;
 var useRouterHistory = require('react-router').useRouterHistory;
-var createHistory = require('history').createHistory;
+var createHistory = require('react-router/node_modules/history').createHistory;
 
 const history = useRouterHistory(createHistory)({
   basename: '/react-bp'
@@ -28,6 +29,7 @@ var appRootComponent;
             /* jshint ignore:start */
             <Router history={history}>
                 <Route path="/" component={AppRoot}>
+                    <IndexRedirect to="/home" />
                     <Route path="/home" component={Home}/>
                     <Redirect from="*" to="/home"/>
                 </Route>

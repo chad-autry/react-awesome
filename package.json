@@ -3,12 +3,12 @@
   "version": "0.0.0",
   "description": "react boilerplate",
   "scripts": {
-    "build": "mkdirp ./target/webapp && npm run less && npm run copy:HTML && npm run copy:jquery&& webpack --config ./webpack-prod.config.js",
+    "build": "mkdirp ./target/webapp/react-bp && npm run less && npm run copy:HTML && npm run copy:jquery&& webpack --config ./webpack-prod.config.js",
     "jshint": "jshint ./src/* --extract=auto --extra-ext=jsx",
     "clean": "rimraf ./target",
-    "copy:HTML": "copyfiles -f ./src/index.html ./target/webapp",
+    "copy:HTML": "copyfiles -f ./src/index.html ./target/webapp/react-bp",
     "copy:jquery": "copyfiles -f ./node_modules/jquery/dist/jquery.min.js ./target/webapp",
-    "less": "lessc ./src/less/main.less > ./target/webapp/styles.css",
+    "less": "lessc ./src/less/main.less > ./target/webapp/react-bp/styles.css",
     "server": "lite-server --baseDir ./target/webapp --files './target/webapp/**/*.html' './target/webapp/**/*.css' './target/webapp/**/*.js'"
   },
   "keywords": [
@@ -22,7 +22,6 @@
   },
   "dependencies": {
     "bootstrap": "^3.3.6",
-    "history": "^4.4.0",
     "react-router": "^3.0.0"
   },
   "devDependencies": {
