@@ -8,7 +8,12 @@ var ReactDOM = require('react-dom');
 var Redirect = require('react-router').Redirect;
 var Router = require('react-router').Router;
 var Route = require('react-router').Route;
-var browserHistory = require('react-router').browserHistory;
+var useRouterHistory = require('react-router').useRouterHistory;
+var createHistory = require('history').createHistory;
+
+const history = useRouterHistory(createHistory)({
+  basename: '/react-bp'
+});
 
 //Keep references to these outside of the function
 var appRootComponent;
@@ -21,7 +26,7 @@ var appRootComponent;
         
         ReactDOM.render(
             /* jshint ignore:start */
-            <Router history={browserHistory}>
+            <Router history={history}>
                 <Route path="/" component={AppRoot}>
                     <Route path="/home" component={Home}/>
                     <Redirect from="*" to="/home"/>
