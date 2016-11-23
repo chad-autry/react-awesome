@@ -12,6 +12,8 @@ var Router = require('react-router').Router;
 var Route = require('react-router').Route;
 var useRouterHistory = require('react-router').useRouterHistory;
 var createHistory = require('react-router/node_modules/history').createHistory;
+var authjwt = require('auth-jwt/src/Auth.js');
+
 
 const history = useRouterHistory(createHistory)({
   basename: '/react-bp'
