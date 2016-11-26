@@ -24,17 +24,18 @@ var appRootComponent;
 
 //This function executes immediately
 (function() {
-    
+    let authService = new authjwt();
+    // Configure the authService
     //This function is attached to execute when the window loads
     document.addEventListener('DOMContentLoaded', function() {
         
         ReactDOM.render(
             /* jshint ignore:start */
             <Router history={history}>
-                <Route path="/" component={AppRoot}>
+                <Route path="/" authService={authService} component={AppRoot}>
                     <IndexRedirect to="/home" />
                     <Route path="/home" component={Home}/>
-                    <Route path="/login" component={Login}/>
+                    <Route path="/login" authService={authService} component={Login}/>
                     <Redirect from="*" to="/home"/>
                 </Route>
             </Router>, document.getElementById('app')

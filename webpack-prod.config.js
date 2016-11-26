@@ -14,7 +14,7 @@ var prodLoaders = [
   {
     test: /\.jsx?$/,
     exclude: /node_modules(?!\/auth-jwt)/,
-    loaders: ['babel-loader'],
+    loaders: ['babel-loader']
   },
 ]
 
@@ -32,7 +32,6 @@ module.exports = {
     loaders: prodLoaders
   },
   plugins: [
-  new webpack.optimize.DedupePlugin(),
-  new webpack.optimize.UglifyJsPlugin({minimize: true}),
+  new webpack.optimize.DedupePlugin()
   ],
 };

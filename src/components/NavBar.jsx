@@ -47,8 +47,8 @@ module.exports = React.createClass({
                         </li>
                     </ul>
                     <ul className="nav navbar-nav navbar-right">
-                            <NavItem to={this.props.isAuthenticated ? "/userMgmnt" : "/login"} activeClassName="active">
-                                 <i className={this.props.isAuthenticated ? "fa fa-user" : "fa fa-sign-in"}></i> {this.props.isAuthenticated ? this.props.userName + ' ': "Logon "}
+                            <NavItem to={this.props.authService.isAuthenticated() ? "/userMgmnt" : "/login"} activeClassName="active">
+                                 <i className={this.props.authService.isAuthenticated() ? "fa fa-user" : "fa fa-sign-in"}></i> {this.props.authService.isAuthenticated() ? this.props.userName + ' ': "Logon "}
                             </NavItem>
                     </ul>
                 </div>

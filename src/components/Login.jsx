@@ -32,7 +32,7 @@ module.exports = React.createClass({
                                 <hr/>
                             </div>
 
-                        <button className="btn btn-block btn-google-plus">
+                        <button className="btn btn-block btn-google-plus" onClick={this.props.route.authService.authenticate('google')}>
                             <i className="fa fa-google-plus">            </i>
                 sign in with Google
                         </button>
