@@ -14,11 +14,11 @@ module.exports = React.createClass({
                         <h2 className="text-center">Log in            </h2>
                         <h6 className="text-center">react-bp has a mock backend which is hard coded to log you in as 'John Doe'            </h6>
                             <div className="form-group has-feedback">
-                                <input type="text" ngControl="email" className="form-control input-lg" placeholder="Email" autofocus/>
+                                <input type="text" className="form-control input-lg" placeholder="Email" autofocus/>
                                 <i className="fa form-control-feedback fa-at">            </i>
                             </div>
                             <div className="form-group has-feedback">
-                                <input type="password" ngControl="password" className="form-control input-lg" placeholder="Password"/>
+                                <input type="password" className="form-control input-lg" placeholder="Password"/>
                                 <i className="fa form-control-feedback fa-key">            </i>
                             </div>
                             <button className="btn btn-lg btn-block btn-success">Log in            </button>
@@ -32,7 +32,7 @@ module.exports = React.createClass({
                                 <hr/>
                             </div>
 
-                        <button className="btn btn-block btn-google-plus" onClick={this.props.route.authService.authenticate('google')}>
+                        <button className="btn btn-block btn-google-plus" onClick={()=>this.props.route.authService.authenticate('google')}>
                             <i className="fa fa-google-plus">            </i>
                 sign in with Google
                         </button>
