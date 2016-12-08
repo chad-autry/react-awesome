@@ -25,6 +25,7 @@ var appRootComponent;
 //This function executes immediately
 (function() {
     let authService = new authjwt();
+    authService.ProviderOAuthConfigs.google.clientId='34478033913-h13qnl7mfako0ean3uv6c9s6f8ujafki.apps.googleusercontent.com';
     // Configure the authService
     //This function is attached to execute when the window loads
     document.addEventListener('DOMContentLoaded', function() {

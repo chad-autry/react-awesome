@@ -14,7 +14,7 @@ module.exports = React.createClass({
                         <h2 className="text-center">Log in            </h2>
                         <h6 className="text-center">react-bp has a mock backend which is hard coded to log you in as 'John Doe'            </h6>
                             <div className="form-group has-feedback">
-                                <input type="text" className="form-control input-lg" placeholder="Email" autofocus/>
+                                <input type="text" className="form-control input-lg" placeholder="Email"/>
                                 <i className="fa form-control-feedback fa-at">            </i>
                             </div>
                             <div className="form-group has-feedback">
