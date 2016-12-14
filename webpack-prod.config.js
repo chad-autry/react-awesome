@@ -25,7 +25,8 @@ module.exports = {
   ],
   output: {
     path: './target/webapp/react-bp',
-    filename: 'bundle.js'
+    filename: 'bundle.js',
+    publicPath: "/react-bp"
   },
   devtool:'source-map',
   module: {

@@ -3,13 +3,14 @@
   "version": "0.0.0",
   "description": "react boilerplate",
   "scripts": {
-    "build": "mkdirp ./target/webapp/react-bp && npm run less && npm run copy:HTML && npm run copy:jquery&& webpack --config ./webpack-prod.config.js",
+    "build": "mkdirp ./target/webapp/react-bp && npm run less && npm run copy:HTML && npm run copy:auth && npm run copy:jquery&& webpack --config ./webpack-prod.config.js",
     "jshint": "jshint ./src/* --extract=auto --extra-ext=jsx",
     "clean": "rimraf ./target",
+    "copy:auth": "copyfiles -f ./src/googleStaticAuth.html ./target/webapp/react-bp",
     "copy:HTML": "copyfiles -f ./src/index.html ./target/webapp/react-bp",
     "copy:jquery": "copyfiles -f ./node_modules/jquery/dist/jquery.min.js ./target/webapp",
     "less": "lessc ./src/less/main.less > ./target/webapp/react-bp/styles.css",
-    "server": "lite-server --baseDir ./target/webapp --files './target/webapp/**/*.html' './target/webapp/**/*.css' './target/webapp/**/*.js'"
+    "server": "webpack-dev-server --content-base ./target/webapp --port 3000"
   },
   "keywords": [
     "react",
@@ -38,12 +39,12 @@
     "jquery": "^2.2.3",
     "jshint": "^2.9.1-rc1",
     "less": "^2.5.3",
-    "lite-server": "^1.3.1",
     "mkdirp": "^0.5.1",
     "react": "^15.0.1",
     "react-dom": "^15.0.1",
     "rimraf": "^2.4.4",
-    "webpack": "^1.13.3"
+    "webpack": "^1.13.3",
+    "webpack-dev-server": "^1.16.2"
   },
   "jshintConfig": {
     "node": "true",
