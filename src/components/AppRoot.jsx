@@ -17,11 +17,12 @@ module.exports = React.createClass({
         return {isAuthenticated: this.props.route.authService.isAuthenticated()};
     },
     render: function() {
+        var childrenWithProps = React.cloneElement(this.props.children, {isAuthenticated: this.state.isAuthenticated});
         return (
             /* jshint ignore:start */
             <div className="container-fluid">
                 <NavBar authService={this.props.route.authService} isAuthenticated={this.state.isAuthenticated}/>
-                {this.props.children}
+                {childrenWithProps}
                 <Footer/>
             </div>
             /* jshint ignore:end */

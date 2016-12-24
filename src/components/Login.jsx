@@ -3,8 +3,18 @@ var Link = require('react-router').Link;
 
 module.exports = React.createClass({
     
-
+    // ask for `router` from context
+    contextTypes: {
+        router: React.PropTypes.object
+    },
+    logout: function() {
+        this.props.route.authService.logout();
+        this.context.router.push('/home');
+    },
     render: function() {
+        if (this.props.isAuthenticated) {
+            this.context.router.push('/home');
+        }
         return (
             /* jshint ignore:start */
 
