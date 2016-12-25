@@ -13,7 +13,7 @@ var prodLoaders = [
   // javascript/jsx loader - https://www.npmjs.com/package/babel-loader - without the react-hot loader
   {
     test: /\.jsx?$/,
-    exclude: /node_modules(?!\/auth-jwt)/,
+    exclude: /node_modules(?!\/client-auth-jwt)/,
     loaders: ['babel-loader']
   },
 ]
