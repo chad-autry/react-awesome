@@ -70,6 +70,7 @@ module.exports = React.createClass({
                       <h4><i className="fa fa-sign-in"></i> OAuth</h4>
                       <p>
                         Built in widgets and routing for Google OAuth2 and private authentication
+                        <a href="https://github.com/chad-autry/client-auth-jwt">More &raquo;</a>
                       </p>
                     </div>
                   </div>
