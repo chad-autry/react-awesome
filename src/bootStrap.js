@@ -17,7 +17,7 @@ var authjwt = require('client-auth-jwt/src/Auth.js');
 
 
 const history = useRouterHistory(createHistory)({
-  basename: '/react-bp'
+  basename: '/'
 });
 
 //Keep references to these outside of the function

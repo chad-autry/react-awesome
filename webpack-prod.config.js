@@ -24,9 +24,9 @@ module.exports = {
   './src/bootStrap.js'
   ],
   output: {
-    path: './target/webapp/react-bp',
+    path: './target/webapp',
     filename: 'bundle.js',
-    publicPath: "/react-bp"
+    publicPath: "/"
   },
   devtool:'source-map',
   module: {

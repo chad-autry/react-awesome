@@ -3,14 +3,14 @@
   "version": "0.0.0",
   "description": "react boilerplate",
   "scripts": {
-    "build": "mkdirp ./target/webapp/react-bp && npm run less && npm run copy:HTML && npm run copy:auth && npm run copy:jquery&& webpack --config ./webpack-prod.config.js",
+    "build": "mkdirp ./target/webapp && npm run less && npm run copy:HTML && npm run copy:auth && npm run copy:jquery&& webpack --config ./webpack-prod.config.js",
     "jshint": "jshint ./src/* --extract=auto --extra-ext=jsx",
     "clean": "rimraf ./target",
-    "copy:auth": "copyfiles -f ./src/googleStaticAuth.html ./target/webapp/react-bp",
-    "copy:HTML": "copyfiles -f ./src/index.html ./target/webapp/react-bp",
+    "copy:auth": "copyfiles -f ./src/googleStaticAuth.html ./target/webapp",
+    "copy:HTML": "copyfiles -f ./src/index.html ./target/webapp",
     "copy:jquery": "copyfiles -f ./node_modules/jquery/dist/jquery.min.js ./target/webapp",
-    "less": "lessc ./src/less/main.less > ./target/webapp/react-bp/styles.css",
-    "server": "webpack-dev-server --content-base ./target/webapp --port 3000"
+    "less": "lessc ./src/less/main.less > ./target/webapp/styles.css",
+    "server": "webpack-dev-server --content-base ./target/webapp --history-api-fallback --port 3000"
   },
   "keywords": [
     "react",
