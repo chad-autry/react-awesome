@@ -26,9 +26,17 @@ var appRootComponent;
 //This function executes immediately
 (function() {
     let authService = new authjwt();
-    authService.ProviderOAuthConfigs.google.clientId='34478033913-h13qnl7mfako0ean3uv6c9s6f8ujafki.apps.googleusercontent.com';
-    authService.ProviderOAuthConfigs.google.redirectUri= window.location.origin + '/react-bp/googleStaticAuth.html',
+  
     // Configure the authService
+    authService.ProviderOAuthConfigs.google.clientId='34478033913-h13qnl7mfako0ean3uv6c9s6f8ujafki.apps.googleusercontent.com';
+    authService.ProviderOAuthConfigs.google.redirectUri= window.location.origin + '/react-bp/googleStaticAuth.html';
+  
+    var rerouteUnauthorized = function(nextState, replaceState) {
+        if (!authService.isAuthenticated()) {
+            replaceState('/login');
+        }
+    };
+
     //This function is attached to execute when the window loads
     document.addEventListener('DOMContentLoaded', function() {
         
@@ -39,7 +47,8 @@ var appRootComponent;
                     <IndexRedirect to="/home" />
                     <Route path="/home" component={Home}/>
                     <Route path="/login" authService={authService} component={Login}/>
-                    <Route path="/userMgmnt" authService={authService} component={UserManagement}/>
+                    <Route path="/userMgmnt" authService={authService} component={UserManagement} 
+                        onEnter={rerouteUnauthorized}/>
                     <Redirect from="*" to="/home"/>
                 </Route>
             </Router>, document.getElementById('app')
