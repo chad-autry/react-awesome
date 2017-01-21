@@ -12,7 +12,7 @@ var Redirect = require('react-router').Redirect;
 var Router = require('react-router').Router;
 var Route = require('react-router').Route;
 var useRouterHistory = require('react-router').useRouterHistory;
-var createHistory = require('history').createHistory;
+var createHistory = require('react-router/node_modules/history').createHistory;
 var authjwt = require('client-auth-jwt/src/Auth.js');
 
 
