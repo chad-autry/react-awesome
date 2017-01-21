@@ -23,7 +23,7 @@
   },
   "dependencies": {
     "bootstrap": "^3.3.6",
-    "client-auth-jwt": "^0.4.0"
+    "client-auth-jwt": "^0.4.0",
     "react-router": "^3.0.0"
   },
   "devDependencies": {
