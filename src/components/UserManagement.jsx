@@ -1,17 +1,21 @@
 var React = require('react');
 var Link = require('react-router').Link;
+var PropTypes = require('prop-types');
 
-module.exports = React.createClass({
-    
-    // ask for `router` from context
-    contextTypes: {
-        router: React.PropTypes.object
-    },
-    logout: function() {
+module.exports = class UserManagement extends React.Component {
+
+    constructor(props) {
+        super(props);
+        // This line is important!
+        this.logout = this.logout.bind(this);
+    }
+
+    logout() {
         this.props.route.authService.logout();
         this.context.router.push('/login');
-    },
-    render: function() {
+    }
+
+    render() {
         return (
             /* jshint ignore:start */
 
@@ -25,4 +29,9 @@ module.exports = React.createClass({
             /* jshint ignore:end */
         );
     }
-});
+};
+
+// Ask for 'router' from context
+module.exports.contextTypes = {
+    router: PropTypes.object.isRequired
+};

@@ -1,7 +1,7 @@
 var React = require('react');
 
-module.exports = React.createClass({
-    render: function() {
+module.exports = class Home extends React.Component {
+    render() {
         return (
             /* jshint ignore:start */
             <div>
@@ -79,4 +79,4 @@ module.exports = React.createClass({
             /* jshint ignore:end */
         );
     }
-});
+};

@@ -1,7 +1,7 @@
 var React = require('react');
 
-module.exports = React.createClass({
-    render: function() {
+module.exports = class Footer extends React.Component {
+    render() {
         return (
             /* jshint ignore:start */
             <footer className="footer">
@@ -14,4 +14,4 @@ module.exports = React.createClass({
             /* jshint ignore:end */
         );
     }
-});
+};
