@@ -43,7 +43,7 @@ module.exports =  class NavBar extends React.Component{
                     Due to hdpi devices, we're collapsible on both on both xs and sm screens */ }
                 <div className={this.state.menuCollapsed ? 'navbar-collapse hidden-xs hidden-sm' : 'navbar-collapse'}>
                     <ul className="nav navbar-nav">
-                            <NavItem to="/home" activeClassName="active">
+                            <NavItem to="/home" location={this.props.location}>
                                  <i className="fa fa-home"></i> Home
                             </NavItem>
                         <li>
@@ -58,7 +58,7 @@ module.exports =  class NavBar extends React.Component{
                         </li>
                     </ul>
                     <ul className="nav navbar-nav navbar-right">
-                            <NavItem to={this.props.isAuthenticated ? "/userMgmnt" : "/login"} activeClassName="active">
+                            <NavItem to={this.props.isAuthenticated ? "/userMgmnt" : "/login"} location={this.props.location}>
                                  <i className={this.props.isAuthenticated ? "fa fa-user" : "fa fa-sign-in"}></i> {this.props.isAuthenticated ? this.props.authService.getPayload().name + ' ': "Logon "}
                             </NavItem>
                     </ul>

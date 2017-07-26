@@ -1,21 +1,29 @@
 var React = require('react');
-var Link = require('react-router').Link;
+var Redirect = require('react-router-dom').Redirect;
 var PropTypes = require('prop-types');
 
 module.exports = class UserManagement extends React.Component {
 
     constructor(props) {
         super(props);
+        this.state = {redirectToLogin:false};
         // This line is important!
         this.logout = this.logout.bind(this);
     }
 
     logout() {
-        this.props.route.authService.logout();
-        this.context.router.push('/login');
+        this.props.authService.logout();
+        this.setState({redirectToLogin:true});
     }
 
     render() {
+         if (this.state.redirectToLogin) {
+            return (
+                /* jshint ignore:start */
+                <Redirect to='/login'/>
+                /* jshint ignore:end */
+            );
+        }
         return (
             /* jshint ignore:start */
 

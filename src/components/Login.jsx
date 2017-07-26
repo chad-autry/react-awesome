@@ -1,23 +1,20 @@
 var React = require('react');
-var Link = require('react-router').Link;
-var PropTypes = require('prop-types');
+var Link = require('react-router-dom').Link;
+var Redirect = require('react-router-dom').Redirect;
 
 module.exports = class Login extends React.Component {
-    
+
     constructor(props) {
         super(props);
-        // This line is important!
-        this.logout = this.logout.bind(this);
     } 
-
-    logout() {
-        this.props.route.authService.logout();
-        this.context.router.push('/home');
-    }
-
+    
     render() {
         if (this.props.isAuthenticated) {
-            this.context.router.push('/home');
+            return (
+                /* jshint ignore:start */
+                <Redirect to='/home'/>
+                /* jshint ignore:end */
+            );
         }
         return (
             /* jshint ignore:start */
@@ -46,7 +43,7 @@ module.exports = class Login extends React.Component {
                                 <hr/>
                             </div>
 
-                        <button className="btn btn-block btn-google-plus" onClick={()=>this.props.route.authService.authenticate('google')}>
+                        <button className="btn btn-block btn-google-plus" onClick={()=>this.props.authService.authenticate('google')}>
                             <i className="fa fa-google-plus">            </i>
                 sign in with Google
                         </button>
@@ -56,9 +53,4 @@ module.exports = class Login extends React.Component {
             /* jshint ignore:end */
         );
     }
-};
-
-// ask for `router` from context
-module.exports.contextTypes = {
-        router: PropTypes.object.isRequired
 };

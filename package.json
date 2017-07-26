@@ -10,7 +10,7 @@
     "copy:HTML": "copyfiles -f ./src/index.html ./target/webapp",
     "copy:jquery": "copyfiles -f ./node_modules/jquery/dist/jquery.min.js ./target/webapp",
     "less": "lessc ./src/less/main.less > ./target/webapp/styles.css",
-    "server": "webpack-dev-server --content-base ./target/webapp --history-api-fallback --port 3000"
+    "server": "webpack-dev-server --content-base ./target/webapp --port 8080"
   },
   "keywords": [
     "react",
@@ -24,7 +24,7 @@
   "dependencies": {
     "bootstrap": "^3.3.6",
     "client-auth-jwt": "^0.4.0",
-    "react-router": "^3.0.0",
+    "react-router-dom": "^4.0.0",
     "prop-types": "^15.5.10"
   },
   "devDependencies": {
