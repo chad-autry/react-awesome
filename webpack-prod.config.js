@@ -21,7 +21,7 @@ var prodLoaders = [
 module.exports = {
   entry: [
   // our entry file
-  './src/bootStrap.js'
+  './gh-pages/src/bootStrap.js'
   ],
   output: {
     path: './target/webapp',

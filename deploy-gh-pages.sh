@@ -1,6 +1,6 @@
 #!/bin/bash
 set -ev;
-cd target/webapp/react-bp
+cd target/webapp
 git init
 git config user.name ${GH_NAME}
 git config user.email ${GH_EMAIL}

@@ -36,7 +36,7 @@ module.exports =  class NavBar extends React.Component{
                         <i className={this.state.menuCollapsed ? 'fa fa-chevron-right':'fa fa-chevron-down'}></i>
                     </div>
                     <div className="navbar-brand">
-                        <i className="fa fa-cube"></i> react-bp
+                        <i className="fa fa-cube"></i> react-awesome
                     </div>
                 </div>
                 { /*Programatically controll hiding the collapse using react.
@@ -47,20 +47,15 @@ module.exports =  class NavBar extends React.Component{
                                  <i className="fa fa-home"></i> Home
                             </NavItem>
                         <li>
-                            <a href="https://github.com/chad-autry/react-bp">
+                            <a href="https://github.com/chad-autry/react-awesome">
                                 <i className="fa fa-github-alt"></i> Github
                             </a>
                         </li>
                         <li>
-                            <a href="https://github.com/chad-autry/react-bp/issues">
+                            <a href="https://github.com/chad-autry/react-awesome/issues">
                                 <i className="fa fa-comments"></i> Support
                             </a>
                         </li>
-                    </ul>
-                    <ul className="nav navbar-nav navbar-right">
-                            <NavItem to={this.props.isAuthenticated ? "/userMgmnt" : "/login"} location={this.props.location}>
-                                 <i className={this.props.isAuthenticated ? "fa fa-user" : "fa fa-sign-in"}></i> {this.props.isAuthenticated ? this.props.authService.getPayload().name + ' ': "Logon "}
-                            </NavItem>
                     </ul>
                 </div>
             </div>

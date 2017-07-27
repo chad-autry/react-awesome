@@ -6,14 +6,13 @@ module.exports = class Home extends React.Component {
             /* jshint ignore:start */
             <div>
                 <div className="jumbotron">
-                  <h1 className="text-center">Notice</h1>
+                  <h1 className="text-center">Features</h1>
                   <ul className="lead">
                     <li>
-                      <i className="fa fa-exclamation-triangle"></i>&nbsp;react-bp is my own personal template for a front end web client. Documentation light, but should be fairly easy for others to get into.
+                      <i className="fa fa-circle"></i>&nbsp;Single powerful nestable component
                     </li>
                     <li>
-                      <i className="fa fa-code-fork"></i>&nbsp;react-bp has its origins in <a href="https://github.com/joshdmiller">joshdmiller's</a>&nbsp;<a href="https://github.com/ngbp/ngbp">ngbp project</a>.
-                      It has since then been heavily modified.
+                      <i className="fa fa-circle-o"></i>&nbsp;&nbsp;&nbsp;&nbsp;Color and transparency hierarchy
                     </li>
                   </ul>
                 </div>
