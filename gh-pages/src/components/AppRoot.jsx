@@ -9,21 +9,13 @@ var Home = require('./Home.jsx');
 module.exports = class AppRoot extends React.Component {
     constructor(props) {	 
         super(props);
-        //Register for Authentication state changes
-        this.props.authService.onAuthChange(() => {
-            this.setState({
-                isAuthenticated: this.props.authService.isAuthenticated()
-            });
-            
-        });
-        this.state = {isAuthenticated: this.props.authService.isAuthenticated()};
     }
 
     render() {
         return (
             /* jshint ignore:start */
             <div className="container-fluid">
-                <NavBar authService={this.props.authService} isAuthenticated={this.state.isAuthenticated}/>
+                <NavBar location={this.props.location}/>
                 <Switch>
                     <Route path="/home" component={Home}/>
                     <Redirect from="*" to="/home"/>
