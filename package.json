@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "description": "SVG icon component specifically made to be compatible with Font Awesome 5 sprite sheets",
   "scripts": {
-    "build": "mkdirp ./target/webapp && npm run less && npm run copy:HTML && npm run copy:SVG && webpack --config ./webpack-prod.config.js",
+    "build": "mkdirp ./target/webapp/react-awesome && npm run less && npm run copy:HTML && npm run copy:SVG && webpack --config ./webpack-prod.config.js",
     "jshint": "jshint ./src/* --extract=auto --extra-ext=jsx",
     "clean": "rimraf ./target",
     "copy:HTML": "copyfiles -f ./gh-pages/src/index.html ./target/webapp/react-awesome",
