@@ -34,8 +34,13 @@ module.exports = class Home extends React.Component {
             
                 <div className="marketing">
                   <Icon width="48" height="48" href="./sprites.svg#arrow-down"/>
-                  <Icon sizeMultiplier="3" href="./sprites.svg#trophy">
+                  <Icon sizeMultiplier="3" style={{fill: 'blue'}} href="./sprites.svg#trophy">
                       <Icon transform="translate(0 -5) scale(.25) rotate(180)" href="sprites.svg#arrow-down" isCutout/>
+                  </Icon>
+                  <Icon sizeMultiplier="3" style={{fill: 'blue'}}>
+                      <Icon href="sprites.svg#star" />
+                      <Icon style={{fill: 'red'}} transform="scale(.75)" href="sprites.svg#star" />
+                      <Icon transform="scale(.5)" href="sprites.svg#star" />
                   </Icon>
                 </div>
             </div>

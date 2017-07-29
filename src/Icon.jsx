@@ -32,12 +32,15 @@ module.exports  = ({height, width, sizeMultiplier, transform, href, ...rest }) =
               children.push(<MaskedGroup key={i} maskId={"mask"+maskId} children={maskedGroupChildren}/>);
               maskId++;
     	} else {
-    		children.push(iconChildren[i]);
+    		children.unshift(React.cloneElement(iconChildren[i], {width:myWidth, height:myHeight}));
     	}
     }
 	return (
     /* jshint ignore:start */
-    <svg height={myHeight} width={myWidth}>
+    <svg height={myHeight}
+         width={myWidth}  
+    	 style={rest.style}
+    	 className={rest.className}>
         <defs>
             {defs}
         </defs>
