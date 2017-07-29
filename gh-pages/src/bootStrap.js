@@ -19,7 +19,7 @@ var appRootComponent;
         
         ReactDOM.render(
             /* jshint ignore:start */
-            <Router>
+            <Router basename="/react-awesome">
                 <Route path="/" render={(routeProps) => <AppRoot location={routeProps.location} {...routeProps} />}/>
             </Router>, document.getElementById('app')
             /* jshint ignore:end */

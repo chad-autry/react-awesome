@@ -6,9 +6,9 @@
     "build": "mkdirp ./target/webapp && npm run less && npm run copy:HTML && npm run copy:SVG && webpack --config ./webpack-prod.config.js",
     "jshint": "jshint ./src/* --extract=auto --extra-ext=jsx",
     "clean": "rimraf ./target",
-    "copy:HTML": "copyfiles -f ./gh-pages/src/index.html ./target/webapp",
-    "copy:SVG": "copyfiles -f ./gh-pages/src/sprites.svg ./target/webapp",
-    "less": "lessc ./gh-pages/src/less/main.less > ./target/webapp/styles.css",
+    "copy:HTML": "copyfiles -f ./gh-pages/src/index.html ./target/webapp/react-awesome",
+    "copy:SVG": "copyfiles -f ./gh-pages/src/sprites.svg ./target/webapp/react-awesome",
+    "less": "lessc ./gh-pages/src/less/main.less > ./target/webapp/react-awesome/styles.css",
     "server": "webpack-dev-server --content-base ./target/webapp --port 8080"
   },
   "keywords": [

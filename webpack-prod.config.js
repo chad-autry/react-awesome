@@ -24,7 +24,7 @@ module.exports = {
   './gh-pages/src/bootStrap.js'
   ],
   output: {
-    path: './target/webapp',
+    path: './target/webapp/react-awesome',
     filename: 'bundle.js',
     publicPath: "/"
   },

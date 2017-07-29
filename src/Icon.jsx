@@ -1,6 +1,16 @@
 var React = require('react');
 var MaskedGroup = require('./MaskedGroup.jsx')
-module.exports  = ({height, width, transform, href, ...rest }) => {
+module.exports  = ({height, width, sizeMultiplier, transform, href, ...rest }) => {
+	let myHeight = height;
+	let myWidth = width;
+	if (!width || !height) {
+		myHeight = 16;
+		myWidth = 16;
+		if (!!sizeMultiplier) {
+			myHeight = myHeight * sizeMultiplier;
+			myWidth = myWidth * sizeMultiplier;
+		}
+	}
 	let defs = [];
     let children = [];
     let maskId = 0;
@@ -15,7 +25,7 @@ module.exports  = ({height, width, transform, href, ...rest }) => {
     		defs.push(
     		  <mask key={i} id={"mask" + maskId}>
                 <rect id="bg" x="0" y="0" width="100%" height="100%" fill="white"/>
-               {React.cloneElement(iconChildren[i], { fill: "black" })}
+               {React.cloneElement(iconChildren[i], { fill: "black", width:myWidth, height:myHeight })}
               </mask>);
               let maskedGroupChildren = children;
               children = [];
@@ -27,12 +37,12 @@ module.exports  = ({height, width, transform, href, ...rest }) => {
     }
 	return (
     /* jshint ignore:start */
-    <svg height={height} width={width}>
+    <svg height={myHeight} width={myWidth}>
         <defs>
             {defs}
         </defs>
         {/*This transform centers the children, and makes rotation/skew transforms be about center*/}
-        <g transform={"translate("+width/2 + " " +  height/2 + ") " + (!!transform ? transform : "") + " translate(" + -1*width/2 + " " + -1*height/2 +")"}>
+        <g transform={"translate("+myWidth/2 + " " +  myHeight/2 + ") " + (!!transform ? transform : "") + " translate(" + -1*myWidth/2 + " " + -1*myHeight/2 +")"}>
             {children}
        </g>
    </svg>
