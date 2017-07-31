@@ -1,5 +1,13 @@
 var React = require('react');
-var MaskedGroup = require('./MaskedGroup.jsx')
+var MaskedGroup = require('./MaskedGroup.jsx');
+
+let uuidv4 = function() {
+  return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+    var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+    return v.toString(16);
+  });
+};
+
 module.exports  = ({height,
                     width, 
                     sizeMultiplier, 
@@ -10,6 +18,7 @@ module.exports  = ({height,
                     shiftUp,
                     shiftDown,
                     ...rest }) => {
+    let localUuid = uuidv4();
 	let myHeight = height;
 	let myWidth = width;
 	let grid = 16; //TODO This should probablly be the same as the default height/width
@@ -43,13 +52,13 @@ module.exports  = ({height,
     for (let i = iconChildren.length - 1; i > -1; i--) {
     	if (iconChildren[i].props.isCutout) {
     		defs.push(
-    		  <mask key={i} id={"mask" + maskId}>
+    		  <mask key={i} id={localUuid+"mask" + maskId}>
                 <rect id="bg" x="0" y="0" width="100%" height="100%" fill="white"/>
-               {React.cloneElement(iconChildren[i], { fill: "black", width:myWidth, height:myHeight, sizeMultiplier:sizeMultiplier})}
+               {React.cloneElement(iconChildren[i], { style:{fill: "black"}, width:myWidth, height:myHeight, sizeMultiplier:sizeMultiplier})}
               </mask>);
               let maskedGroupChildren = children;
               children = [];
-              children.push(<MaskedGroup key={i} maskId={"mask"+maskId} children={maskedGroupChildren}/>);
+              children.push(<MaskedGroup key={i} maskId={localUuid+"mask"+maskId} children={maskedGroupChildren}/>);
               maskId++;
     	} else {
     		children.unshift(React.cloneElement(iconChildren[i], {width:myWidth, height:myHeight, sizeMultiplier:sizeMultiplier}));
