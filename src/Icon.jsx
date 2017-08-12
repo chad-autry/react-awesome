@@ -1,30 +1,29 @@
-import React from 'react';
-
-import MaskedGroup from './MaskedGroup.jsx';
+import MaskedGroup from "./MaskedGroup.jsx";
+import React from "react";
 
 const getUuidv4 = () =>
-  'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, c => {
-    const r = (Math.random() * 16) | 0;
-    const v = c === 'x' ? r : (r & 0x3) | 0x8;
-    return v.toString(16);
+  "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, match => {
+    const rand = (Math.random() * 16) | 0;
+    const value = match === "x" ? rand : (rand & 0x3) | 0x8;
+    return value.toString(16);
   });
 
 const Icon = ({
   height: providedHeight = 16,
   width: providedWidth = 16,
   scale = 1,
-  transform = '',
+  transform = "",
   href,
   shiftX: providedShiftX = 0,
   shiftY: providedShiftY = 0,
   children: providedChildren,
+  // eslint-disable-next-line no-unused-vars
   isCutout,
   ...rest
 }) => {
   const localUuid = getUuidv4();
   const height = providedHeight * scale;
   const width = providedWidth * scale;
-  const grid = 16; //TODO This should probablly be the same as the default height/width
   //TODO Aspect ratios? Is there a way to inspect the href for an aspect ratio?
 
   const shiftX = scale * providedShiftX;
@@ -43,10 +42,10 @@ const Icon = ({
   for (let i = iconChildren.length - 1; i > -1; i--) {
     if (iconChildren[i].props.isCutout) {
       defs.push(
-        <mask key={i} id={localUuid + 'mask' + maskId}>
+        <mask key={i} id={localUuid + "mask" + maskId}>
           <rect id="bg" x="0" y="0" width="100%" height="100%" fill="white" />
           {React.cloneElement(iconChildren[i], {
-            style: { fill: 'black' },
+            style: { fill: "black" },
             width: width,
             height: height
           })}
@@ -55,11 +54,9 @@ const Icon = ({
       const maskedGroupChildren = children;
       children = [];
       children.push(
-        <MaskedGroup
-          key={i}
-          maskId={`${localUuid}mask${maskId}`}
-          children={maskedGroupChildren}
-        />
+        <MaskedGroup key={i} maskId={`${localUuid}mask${maskId}`}>
+          {maskedGroupChildren}
+        </MaskedGroup>
       );
       maskId++;
     } else {
@@ -83,8 +80,7 @@ const Icon = ({
       {/*This transform centers the children, and makes rotation/skew transforms be about center*/}
       <g
         transform={`translate(${shiftX + width2} ${shiftY +
-          height2}) ${transform} translate(${-1 * width2} ${-1 * height2})`}
-      >
+          height2}) ${transform} translate(${-1 * width2} ${-1 * height2})`}>
         {children}
       </g>
     </svg>

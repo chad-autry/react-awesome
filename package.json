@@ -4,7 +4,7 @@
   "description": "SVG icon component specifically made to be compatible with Font Awesome 5 sprite sheets",
   "scripts": {
     "build": "mkdirp ./target/webapp/react-awesome && npm run less && npm run copy:HTML && npm run copy:SVG && webpack --config ./webpack-prod.config.js",
-    "jshint": "jshint ./src/* --extract=auto --extra-ext=jsx",
+    "eslint:fix": "eslint --fix ./src/* && eslint --fix ./gh-pages/*",
     "clean": "rimraf ./target",
     "copy:HTML": "copyfiles -f ./gh-pages/src/index.html ./target/webapp/react-awesome",
     "copy:SVG": "copyfiles -f ./gh-pages/src/sprites.svg ./target/webapp/react-awesome",
@@ -37,6 +37,10 @@
     "babel-register": "^6.18.0",
     "bootstrap": "^3.3.6",
     "copyfiles": "^0.2.1",
+    "eslint": "^4.4.1",
+    "eslint-config-prettier": "^2.3.0",
+    "eslint-plugin-prettier": "^2.1.2",
+    "eslint-plugin-react": "^7.2.0",
     "husky": "^0.14.3",
     "jquery": "^2.2.3",
     "jshint": "^2.9.1-rc1",
@@ -60,7 +64,7 @@
   },
   "lint-staged": {
     "*.js, *.jsx": [
-      "prettier --write --jsx-bracket-same-line=true",
+      "eslint",
       "git add"
     ]
   }

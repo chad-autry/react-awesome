@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 const MaskedGroup = ({ maskId, children }) =>
   <g mask={`url(#${maskId})`}>
