@@ -9,7 +9,7 @@
     "copy:HTML": "copyfiles -f ./gh-pages/src/index.html ./target/webapp/react-awesome",
     "copy:SVG": "copyfiles -f ./gh-pages/src/sprites.svg ./target/webapp/react-awesome",
     "less": "lessc ./gh-pages/src/less/main.less > ./target/webapp/react-awesome/styles.css",
-    "server": "webpack-dev-server --content-base ./target/webapp --port 8080"
+    "start": "webpack-dev-server --content-base ./target/webapp --port 8080"
   },
   "keywords": [
     "react",
@@ -20,12 +20,12 @@
     "email": "chad.autry@gmail.com",
     "url": "http://chad-autry.github.io/"
   },
-  "dependencies": {
-
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chad-autry/react-awesome.git"
   },
+  "dependencies": {},
   "devDependencies": {
-    "bootstrap": "^3.3.6",
-    "react-router-dom": "^4.0.0",
     "babel-cli": "^6.18.0",
     "babel-core": "^6.18.2",
     "babel-loader": "^6.2.7",
@@ -34,6 +34,7 @@
     "babel-preset-react": "^6.16.0",
     "babel-preset-stage-0": "^6.16.0",
     "babel-register": "^6.18.0",
+    "bootstrap": "^3.3.6",
     "copyfiles": "^0.2.1",
     "jquery": "^2.2.3",
     "jshint": "^2.9.1-rc1",
@@ -41,6 +42,7 @@
     "mkdirp": "^0.5.1",
     "react": "^15.0.1",
     "react-dom": "^15.0.1",
+    "react-router-dom": "^4.0.0",
     "rimraf": "^2.4.4",
     "webpack": "^1.13.3",
     "webpack-dev-server": "^1.16.2"

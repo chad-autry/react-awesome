@@ -1,8 +1,8 @@
-var React = require('react');
-module.exports  = ({maskId, children }) =>  (
-    /* jshint ignore:start */
-    <g mask={"url(#"+maskId+")"}>
-            {children}
-    </g>
-    /* jshint ignore:end */
-);
+import React from 'react';
+
+const MaskedGroup = ({ maskId, children }) =>
+  <g mask={`url(#${maskId})`}>
+    {children}
+  </g>;
+
+export default MaskedGroup;

@@ -1,17 +1,13 @@
-var React = require('react');
+import React from 'react';
 
-module.exports = class Footer extends React.Component {
-    render() {
-        return (
-            /* jshint ignore:start */
-            <footer className="footer">
-            <div className="footer-inner">
-                <p>
-                    <i className="fa fa-copyright"></i> 2017 <a href="http://chad-autry.github.io/">Chad Autry</a>.
-                </p>
-            </div>
-            </footer>
-            /* jshint ignore:end */
-        );
-    }
-};
+const Footer = () =>
+  <footer className="footer">
+    <div className="footer-inner">
+      <p>
+        <i className="fa fa-copyright" /> 2017{' '}
+        <a href="http://chad-autry.github.io/">Chad Autry</a>.
+      </p>
+    </div>
+  </footer>;
+
+export default Footer;

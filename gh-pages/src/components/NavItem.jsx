@@ -1,13 +1,14 @@
-var Link = require('react-router-dom').Link;
-var Route = require('react-router-dom').Route;
-var React = require('react');
+import React from 'react';
+import { Link, Route } from 'react-router-dom';
 
-module.exports  = ({ to, ...rest }) => (
-    /* jshint ignore:start */
-    <Route path={to} children={({ match }) => (
-        <li className={match ? 'active' : ''}>
-            <Link to={to} children={rest.children}/>
-        </li>
-    )}/>
-  /* jshint ignore:end */
-);
+const NavItem = ({ to, children, ...rest }) =>
+  <Route
+    path={to}
+    children={({ match }) =>
+      <li className={match ? 'active' : ''}>
+        <Link to={to} children={children} />
+      </li>}
+    {...rest}
+  />;
+
+export default NavItem;

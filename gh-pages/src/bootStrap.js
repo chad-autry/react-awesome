@@ -1,29 +1,19 @@
-"use strict";
 //This JS file simply bootstraps the app from the root component when the window loads
-/*global window: false */
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 
-var AppRoot = require('./components/AppRoot.jsx');
-var React = require('react');
-var ReactDOM = require('react-dom');
-var Router = require('react-router-dom').BrowserRouter;
-var Route = require('react-router-dom').Route;
-
-//Keep references to these outside of the function
-var appRootComponent;
+import AppRoot from './components/AppRoot.jsx';
 
 //This function executes immediately
 (function() {
-
-    //This function is attached to execute when the window loads
-    document.addEventListener('DOMContentLoaded', function() {
-        
-        ReactDOM.render(
-            /* jshint ignore:start */
-            <Router basename="/react-awesome">
-                <Route path="/" render={(routeProps) => <AppRoot location={routeProps.location} {...routeProps} />}/>
-            </Router>, document.getElementById('app')
-            /* jshint ignore:end */
-        );
-
-    });
+  //This function is attached to execute when the window loads
+  document.addEventListener('DOMContentLoaded', function() {
+    ReactDOM.render(
+      <Router basename="/react-awesome">
+        <Route render={props => <AppRoot {...props} />} />
+      </Router>,
+      document.getElementById('app')
+    );
+  });
 })();
