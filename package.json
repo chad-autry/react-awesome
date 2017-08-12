@@ -9,7 +9,8 @@
     "copy:HTML": "copyfiles -f ./gh-pages/src/index.html ./target/webapp/react-awesome",
     "copy:SVG": "copyfiles -f ./gh-pages/src/sprites.svg ./target/webapp/react-awesome",
     "less": "lessc ./gh-pages/src/less/main.less > ./target/webapp/react-awesome/styles.css",
-    "start": "webpack-dev-server --content-base ./target/webapp --port 8080"
+    "start": "webpack-dev-server --content-base ./target/webapp --port 8080",
+    "precommit": "lint-staged"
   },
   "keywords": [
     "react",
@@ -36,10 +37,13 @@
     "babel-register": "^6.18.0",
     "bootstrap": "^3.3.6",
     "copyfiles": "^0.2.1",
+    "husky": "^0.14.3",
     "jquery": "^2.2.3",
     "jshint": "^2.9.1-rc1",
     "less": "^2.5.3",
+    "lint-staged": "^4.0.3",
     "mkdirp": "^0.5.1",
+    "prettier": "^1.5.3",
     "react": "^15.0.1",
     "react-dom": "^15.0.1",
     "react-router-dom": "^4.0.0",
@@ -53,5 +57,11 @@
       "document"
     ],
     "esversion": 6
+  },
+  "lint-staged": {
+    "*.js, *.jsx": [
+      "prettier --write --jsx-bracket-same-line=true",
+      "git add"
+    ]
   }
 }
