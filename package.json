@@ -43,7 +43,6 @@
     "eslint-plugin-react": "^7.2.0",
     "husky": "^0.14.3",
     "jquery": "^2.2.3",
-    "jshint": "^2.9.1-rc1",
     "less": "^2.5.3",
     "lint-staged": "^4.0.3",
     "mkdirp": "^0.5.1",
@@ -54,13 +53,6 @@
     "rimraf": "^2.4.4",
     "webpack": "^1.13.3",
     "webpack-dev-server": "^1.16.2"
-  },
-  "jshintConfig": {
-    "node": "true",
-    "predef": [
-      "document"
-    ],
-    "esversion": 6
   },
   "lint-staged": {
     "*.js, *.jsx": [
