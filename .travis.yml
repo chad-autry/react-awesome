@@ -12,3 +12,9 @@ script:
 after_success:
 - chmod ugo+x ./deploy-gh-pages.sh
 - ./deploy-gh-pages.sh
+deploy:
+   provider: npm
+   email: "chad.autry@gmail.com"
+   api_key: "$NPM_TOKEN"
+   on:
+     tags: true
