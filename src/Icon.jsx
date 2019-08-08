@@ -41,11 +41,12 @@ const Icon = ({
   }
   for (let i = iconChildren.length - 1; i > -1; i--) {
     if (iconChildren[i].props.isCutout) {
+      let opacity = iconChildren[i].props.style && iconChildren[i].props.style.opacity ? iconChildren[i].props.style.opacity : "1.0";
       defs.push(
         <mask key={i} id={localUuid + "mask" + maskId}>
           <rect id="bg" x="0" y="0" width="100%" height="100%" fill="white" />
           {React.cloneElement(iconChildren[i], {
-            style: { fill: "black" },
+            style: { fill: "black", opacity: opacity },
             width: width,
             height: height
           })}
